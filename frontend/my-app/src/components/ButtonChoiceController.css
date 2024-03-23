@@ -1,0 +1,10 @@
+
+.button-container {
+   display: flex;
+  justify-content: center; /* Centers items along the line (for a row) */
+  align-items: center; /* Centers items on the cross-axis (for a row) */
+  flex-wrap: wrap; /* Allows items to wrap to the next line as needed */
+  gap: 40px; /* Space between buttons */
+
+  }
+  

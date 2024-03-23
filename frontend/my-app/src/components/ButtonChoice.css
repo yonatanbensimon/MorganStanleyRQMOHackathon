@@ -1,0 +1,15 @@
+
+.image-button {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    border: none;
+    background: none;
+    cursor: pointer; /* Change cursor on hover to indicate clickability */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .image-button img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+  

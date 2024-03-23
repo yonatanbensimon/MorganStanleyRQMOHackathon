@@ -1,0 +1,23 @@
+.text-box {
+    position: absolute;
+    bottom: 25px; /* Adjust this value to control distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 3px solid #000; /* Black border */
+    background: #FFF; /* White background */
+    color: #000; /* Black text color */
+    padding: 16px; /* Padding around the text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 0 #000; /* Pixel-like shadow to mimic retro games */
+    width: 600px;
+    height: 50px;
+    margin: 0 auto; /* Center the text box if it's inside a block with a specified width */
+    overflow: hidden; /* Ensures the content doesn't spill out */
+  }
+  
+  .text-box p {
+    white-space: pre-wrap; /* Preserves white space and line breaks */
+    margin: 0; /* Removes default paragraph margin */
+  }
+  
