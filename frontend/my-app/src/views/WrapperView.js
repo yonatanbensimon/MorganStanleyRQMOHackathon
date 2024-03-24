@@ -23,10 +23,10 @@ function WrapperView() {
   *   @return {String} - The instructions text.
   */
   function init() {
-    setAvailableOptions([Story.NewOptions]);
+    setAvailableOptions(Story.InitialOptions);
     setCurrentView("game");
     setWeeks(0);
-    return 'placeholder';
+    return "Please Select an Option to Begin the Game";
   }
 
   /*
@@ -38,11 +38,21 @@ function WrapperView() {
   *  @return {String} - The dialogue of the chosenOption.
   */
   function updateOptions(chosenOption) {
+    // Get the game result from the chosen option
     const gameResult = Story?.chosenOption?.gameresult ?? "defaultResult";
+    
+    // Check if the chosen option is a winning option
     if (gameResult) {
       return results();
     }
-    setAvailableOptions(Story.chosenOption.NewOptions);
+    
+    // Remove the chosen option from the available options
+    setAvailableOptions(availableOptions.filter(option => option !== chosenOption));
+    
+    // Add the new options to the available options
+    setAvailableOptions(availableOptions += Story.chosenOption.NewOptions);
+
+    // Update the weeks
     setWeeks(weeks + Story.chosenOption.weeks);
   }
 
@@ -54,7 +64,7 @@ function WrapperView() {
   */
   function results() {
     setCurrentView("result");
-    return 'placeholder';
+    return 'You guessed the disease! Congratulations!';
   }
   
   const renderView = () => {
