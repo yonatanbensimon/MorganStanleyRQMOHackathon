@@ -8,10 +8,9 @@ import Story from './story.json';
 import InstructionsView from "./InstructionsView/InstructionsView";
 
 function WrapperView() {
-  const [currentView, setCurrentView] = useState("game");
+  const [currentView, setCurrentView] = useState("home");
   const [weeks, setWeeks] = useState(0);
   const [availableOptions, setAvailableOptions] = useState([]);
-
 
   /*
   *   Function called when game starts. Initialize the disease.
@@ -72,13 +71,14 @@ function WrapperView() {
         return <GameView changeView={setCurrentView} />;
       case "result":
         return <ResultView changeView={setCurrentView} />;
+      case "instructions":
+        return <InstructionsView changeView={setCurrentView} />;
       default:
         return <HomeView changeView={setCurrentView} />;
     }
   };
 
     return (
-
       <div className="home-container">
       <header>
         <div className="header-left">
@@ -89,6 +89,7 @@ function WrapperView() {
           <button onClick={() => setCurrentView("game")}>Start Game</button>
         </div>
       </header>
+      
       <div className="content">
 
       <div className="container">
@@ -98,13 +99,9 @@ function WrapperView() {
         </div>
       </div>
 
-
       </div>
       <footer>Footer things</footer>
     </div>
-
-
-      
     );
   }
   

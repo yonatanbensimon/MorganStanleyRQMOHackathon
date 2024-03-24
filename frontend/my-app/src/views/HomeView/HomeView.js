@@ -5,7 +5,7 @@ import BestButton from '../../components/BestButton'
 const HomeView = ({ changeView }) => {
   return (
     <div>
-        <BestButton>Start Game</BestButton>
+        <BestButton onClick={() => changeView("instructions")}>Start Game</BestButton>
       </div>
   );
 }

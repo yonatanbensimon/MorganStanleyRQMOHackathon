@@ -7,7 +7,7 @@ import previous from '../../assets/previous.png';
 import previous_grey from '../../assets/previous_grey.png';
 import next from '../../assets/next.png';
 
-const InstructionsView = () => {
+const InstructionsView = ({ changeView }) => {
   const [pageIndex, setPageIndex] = useState(0);
   const textPages = [
     "page 1",
@@ -47,7 +47,7 @@ const InstructionsView = () => {
           )}
           {isLastPage ? (
             <div style={{ display: 'inline-block' }}>
-              <BestButton style={{ marginLeft: '10px' }}>Continue</BestButton>
+              <BestButton style={{ marginLeft: '10px' }} onClick={() => changeView("game")}>Continue</BestButton>
             </div>
           ) : (
             <div style={{ display: 'inline-block' }}>
