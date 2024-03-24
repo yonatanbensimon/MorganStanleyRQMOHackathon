@@ -2,6 +2,7 @@ import HomeView from "./HomeView/HomeView";
 import React from "react";
 import './WrapperView.css';
 import GameView from "./GameView/GameView";
+import InstructionsView from "./InstructionsView/InstructionsView";
 
 function WrapperView() {
     return (
@@ -13,7 +14,6 @@ function WrapperView() {
         </div>
         <h1 className="header-title">Health Game</h1>
         <div className="header-right">
-          <button>Start Game</button>
         </div>
       </header>
       <div className="content">
@@ -21,7 +21,7 @@ function WrapperView() {
       <div className="container">
         <div className="rectangle">
           {/* The different views inside the rectangle go here, we start with HomeView*/}
-          <GameView/>
+          <InstructionsView/>
         </div>
       </div>
 

@@ -10,9 +10,9 @@ function GameView() {
     return (
         <div>
             <ButtonContainer>
-                <ButtonChoice src={mri} onClick={NaN}/>
-                <ButtonChoice src={blood} onClick={NaN}/>
-                <ButtonChoice src={antibiotics} onClick={NaN}/>
+                <ButtonChoice src={mri} text={"MRI"} onClick={NaN}/>
+                <ButtonChoice src={blood} text={"Blood Test"} onClick={NaN}/>
+                <ButtonChoice src={antibiotics} text={"Antibiotics"} onClick={NaN}/>
             </ButtonContainer>
            <TextBox message={"This is a test"}/>
         </div>

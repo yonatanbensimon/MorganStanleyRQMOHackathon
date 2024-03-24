@@ -3,7 +3,7 @@ import './BestButton.css'; // Import your CSS file for styling
 
 const BestButton = ({ children, onClick }) => {
   return (
-    <button className="bestbutton" onClick={onClick}>
+    <button className="BestButton" onClick={onClick}>
       {children}
     </button>
   );
