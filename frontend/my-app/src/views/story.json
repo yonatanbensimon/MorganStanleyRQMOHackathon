@@ -1,0 +1,77 @@
+{
+  "DiagnosticJourney": {
+    "InitialOptions": ["BloodTest", "Antibiotics", "Neurologist"],
+    "BloodTest": {
+      "Title": "Blood test",
+      "Dialogue": "There is nothing conclusive but indicates that scans might lead to something.",
+      "NewOptions": ["MRIScan", "CTScan"],
+      "WeeksTaken": 2
+    },
+    "MRIScan": {
+      "Title": "MRI scan",
+      "Dialogue": "It didn’t show anything abnormal.",
+      "NewOptions": null,
+      "WeeksTaken": 1,
+      "DeadEnd": true
+    },
+    "CTScan": {
+      "Title": "CT scan",
+      "Dialogue": "No conclusions could be drawn.",
+      "NewOptions": null,
+      "WeeksTaken": 1,
+      "DeadEnd": true
+    },
+    "Antibiotics": {
+      "Title": "Antibiotics",
+      "Dialogue": "I tried them for a few months, but there were no improvements in my condition.",
+      "NewOptions": null,
+      "WeeksTaken": 12,
+      "DeadEnd": true
+    },
+    "Neurologist": {
+      "Title": "Neurologist",
+      "Dialogue": "\"Sorry, I couldn’t pinpoint the issue. You should give a rheumatologist or a genetic testing a try.\"",
+      "NewOptions": ["GeneticTesting", "Rheumatologist"],
+      "WeeksTaken": 3
+    },
+    "GeneticTesting": {
+      "Title": "Genetic testing",
+      "Dialogue": "The test showed that my genetics are susceptible to cancer, I might learn more with an oncologist.",
+      "NewOptions": ["Oncologist"],
+      "WeeksTaken": 2
+    },
+    "Oncologist": {
+      "Title": "Oncologist",
+      "Dialogue": "“I don’t know what you have. There is no sign of cancer. I’m sorry I can’t help you more.”",
+      "NewOptions": null,
+      "WeeksTaken": 4,
+      "DeadEnd": true
+    },
+    "Rheumatologist": {
+      "Title": "Rheumatologist",
+      "Dialogue": "“This is out of my specialty. I can refer you to a trial treatment. Also, I suggest an endoscopy.”",
+      "NewOptions": ["TrialTreatment", "Endoscopy"],
+      "WeeksTaken": 3
+    },
+    "TrialTreatment": {
+      "Title": "Trial treatment",
+      "Dialogue": "I tried the treatment for a year, but it didn't help my condition whatsoever.",
+      "NewOptions": null,
+      "WeeksTaken": 52,
+      "DeadEnd": true
+    },
+    "Endoscopy": {
+      "Title": "Endoscopy",
+      "Dialogue": "It shows that my lungs might have an issue, so I could check a pulmonologist.",
+      "NewOptions": ["Pulmonologist"],
+      "WeeksTaken": 2
+    },
+    "Pulmonologist": {
+      "Title": "Pulmonologist",
+      "Dialogue": "“Your lungs aren’t functioning properly. I believe you have a condition where each lung acts independently from the other during sleep. This would explain the symptoms that you have. We found the crux of the issue.”",
+      "NewOptions": null,
+      "WeeksTaken": 6,
+      "GameComplete": true
+    }
+  }
+}

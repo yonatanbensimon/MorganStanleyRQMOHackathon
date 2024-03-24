@@ -2,7 +2,7 @@ import React from 'react';
 import './HomeView.css'; // Import your CSS file for styling
 import BestButton from '../../components/BestButton'
 
-const HomeView = () => {
+const HomeView = ({ changeView }) => {
   return (
     <div>
         <BestButton>Start Game</BestButton>

@@ -6,13 +6,35 @@ import mri from "../../assets/mri.png"
 import blood from "../../assets/blood.png"
 import antibiotics from "../../assets/antibiotics.png"
 
-function GameView() {
+function GameView({ changeView }) {
+
+    // Available options
+    const buttonChoices = [
+        {
+            src: mri,
+            onClick: () => changeView("home"), // Example for changeView usage
+            title: "MRI Scan"
+        },
+        {
+            src: blood,
+            onClick: () => { /* Define onClick handler for this button */ },
+            title: "Blood test"
+        },
+        {
+            src: antibiotics,
+            onClick: () => { /* Define onClick handler for this button */ },
+            title: "Antibiotics"
+        }
+    ];
+
     return (
         <div>
             <ButtonContainer>
-                <ButtonChoice src={mri} text={"MRI"} onClick={NaN}/>
-                <ButtonChoice src={blood} text={"Blood Test"} onClick={NaN}/>
-                <ButtonChoice src={antibiotics} text={"Antibiotics"} onClick={NaN}/>
+                {buttonChoices.map((choice, index) => (
+                    <ButtonChoice key={index} src={choice.src} onClick={choice.onClick}>
+                        {choice.title}
+                    </ButtonChoice>
+                ))}
             </ButtonContainer>
            <TextBox message={"This is a test"}/>
         </div>
