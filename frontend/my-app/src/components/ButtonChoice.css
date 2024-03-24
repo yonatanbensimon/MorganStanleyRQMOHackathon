@@ -1,15 +1,27 @@
-
 .image-button {
-    width: 100px; /* Fixed width */
-    height: 100px; /* Fixed height */
+    display: flex;
+    flex-direction: column; /* Ensures vertical stacking */
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically, helpful if the button has explicit height */
+    width: auto;
+    height: auto;
     border: none;
     background: none;
-    cursor: pointer; /* Change cursor on hover to indicate clickability */
-    padding: 0; /* Remove default padding */
+    cursor: pointer;
+    padding: 5px;
+    margin: 15px;
+    overflow: hidden;
   }
   
   .image-button img {
-    width: 100%;
+    width: 100px; /* Control the image size here */
     height: auto; /* Maintain aspect ratio */
+  }
+  
+  .button-text {
+    font-size: 16px; /* Large and bold text */
+    font-weight: bold;
+    color: #000; /* Text color for visibility */
+    margin-top: 8px; /* Space between image and text */
   }
   

@@ -1,13 +1,39 @@
-.custom-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
+@keyframes neon {
+  0% {
+    border-color: #ff9933; /* Orange */
   }
+  50% {
+    border-color: #ffff33; /* Yellow */
+  }
+  100% {
+    border-color: #ff9933; /* Orange */
+  }
+}
+
+.BestButton {
+  background-color: #4CAF50; /* Green */
+  border: 2px solid #4CAF50; /* Green border */
+  color: white;
+  padding: 14px 28px; /* Slightly reduced padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px; /* Slightly larger font size */
+  margin: 8px 4px; /* Increased margin */
+  cursor: pointer;
+  border-radius: 25px; /* Larger border radius for rounded corners */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition effects */
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* Hover effect */
+.BestButton:hover {
+  background-color: #45a049; /* Darker green on hover */
+  border-color: #45a049; /* Darker green border on hover */
+}
+
+/* Active effect */
+.BestButton:active {
+  background-color: #3e8e41; /* Even darker green when pressed */
+  border-color: #3e8e41; /* Even darker green border when pressed */
+}

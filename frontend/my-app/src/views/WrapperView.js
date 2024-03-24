@@ -5,8 +5,7 @@ import GameView from "./GameView/GameView";
 import ResultView from "./ResultView/ResultView"
 import { useState } from "react";
 import Story from './story.json';
-
-
+import InstructionsView from "./InstructionsView/InstructionsView";
 
 function WrapperView() {
   const [currentView, setCurrentView] = useState("game");
