@@ -13,17 +13,17 @@ function GameView({ changeView }) {
         {
             src: mri,
             onClick: () => changeView("home"), // Example for changeView usage
-            text: "MRI Scan"
+            title: "MRI Scan"
         },
         {
             src: blood,
             onClick: () => { /* Define onClick handler for this button */ },
-            text: "Blood test"
+            title: "Blood test"
         },
         {
             src: antibiotics,
             onClick: () => { /* Define onClick handler for this button */ },
-            text: "Antibiotics"
+            title: "Antibiotics"
         }
     ];
 
@@ -32,7 +32,7 @@ function GameView({ changeView }) {
             <ButtonContainer>
                 {buttonChoices.map((choice, index) => (
                     <ButtonChoice key={index} src={choice.src} onClick={choice.onClick}>
-                        {choice.text}
+                        {choice.title}
                     </ButtonChoice>
                 ))}
             </ButtonContainer>
