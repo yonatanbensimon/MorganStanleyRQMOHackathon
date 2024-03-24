@@ -22,5 +22,10 @@
 
 .score {
   font-size: 30px;
+  margin-top: 5px;
+}
+
+.diagnosistime {
+  font-size: 20px;
   margin-top: 0px;
 }
