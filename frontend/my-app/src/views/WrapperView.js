@@ -2,18 +2,35 @@ import HomeView from "./HomeView/HomeView";
 import React from "react";
 import './WrapperView.css';
 import GameView from "./GameView/GameView";
+import ResultView from "./ResultView/ResultView"
+import { useState } from "react";
+
+
 
 function WrapperView() {
+  const [currentView, setCurrentView] = useState("home");
+  
+  const renderView = () => {
+    switch (currentView) {
+      case "game":
+        return <GameView changeView={setCurrentView} />;
+      case "result":
+        return <ResultView changeView={setCurrentView} />;
+      default:
+        return <HomeView changeView={setCurrentView} />;
+    }
+  };
+
     return (
 
       <div className="home-container">
       <header>
         <div className="header-left">
-          <button>RQMO Home</button>
+          <button onClick={() => setCurrentView("home")}>RQMO Home</button>
         </div>
         <h1 className="header-title">Health Game</h1>
         <div className="header-right">
-          <button>Start Game</button>
+          <button onClick={() => setCurrentView("game")}>Start Game</button>
         </div>
       </header>
       <div className="content">
@@ -21,7 +38,7 @@ function WrapperView() {
       <div className="container">
         <div className="rectangle">
           {/* The different views inside the rectangle go here, we start with HomeView*/}
-          <GameView/>
+          {renderView()}
         </div>
       </div>
 

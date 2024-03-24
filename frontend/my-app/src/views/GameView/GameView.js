@@ -6,11 +6,11 @@ import mri from "../../assets/mri.png"
 import blood from "../../assets/blood.png"
 import antibiotics from "../../assets/antibiotics.png"
 
-function GameView() {
+function GameView({ changeView }) {
     return (
         <div>
             <ButtonContainer>
-                <ButtonChoice src={mri} onClick={NaN}/>
+                <ButtonChoice src={mri} onClick={() => changeView("home")}/>
                 <ButtonChoice src={blood} onClick={NaN}/>
                 <ButtonChoice src={antibiotics} onClick={NaN}/>
             </ButtonContainer>
