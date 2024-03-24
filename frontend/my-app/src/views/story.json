@@ -1,0 +1,24 @@
+{
+    "Story": {
+      "OptionOne": {
+        "Title": "See a doctor",
+        "Dialogue": "Professional advice: you should either get an xray or take antibiotics",
+        "NewOptions": ["OptionTwo", "OptionThree"],
+        "WeeksTaken": 3
+      },
+      "OptionTwo": {
+        "Title": "Get an Xray",
+        "Dialogue": "You have healthy bones, there are no problems here!",
+        "NewOptions": null,
+        "WeeksTaken": 4
+      },
+      "OptionThree": {
+        "Title": "Take antibiotics",
+        "Dialogue": "Your symptoms go away and you feel better. You are cured!!",
+        "NewOptions": null,
+        "WeeksTaken": 2,
+        "gameComplete": true
+      }
+    }
+  }
+  
