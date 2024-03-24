@@ -11,11 +11,6 @@ function GameView({ changeView }) {
     // Available options
     const buttonChoices = [
         {
-            src: mri,
-            onClick: () => changeView("home"), // Example for changeView usage
-            title: "MRI Scan"
-        },
-        {
             src: blood,
             onClick: () => { /* Define onClick handler for this button */ },
             title: "Blood test"
@@ -24,7 +19,12 @@ function GameView({ changeView }) {
             src: antibiotics,
             onClick: () => { /* Define onClick handler for this button */ },
             title: "Antibiotics"
-        }
+        },
+        {
+            src: doctor,
+            onClick: () => changeView("home"), // Example for changeView usage
+            title: "Neurologist"
+        },
     ];
 
     return (
