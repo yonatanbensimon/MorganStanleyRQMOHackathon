@@ -46,7 +46,7 @@ const InstructionsView = ({ changeView }) => {
             </div>
           )}
           {isLastPage ? (
-            <div style={{ display: 'inline-block' }}>
+            <div style={{ display: 'inline-block', verticalAlign: 'top', paddingTop: '30px'}}>
               <BestButton style={{ marginLeft: '10px' }} onClick={() => changeView("game")}>Continue</BestButton>
             </div>
           ) : (
