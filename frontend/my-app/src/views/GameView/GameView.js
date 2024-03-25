@@ -152,7 +152,7 @@ function GameView({ changeView }) {
         "Success": {
             "title": "Congratulations, you have been diagnosed.",
             "src": heart,
-            onClick: () => changeView("result")
+            onClick: () => changeView("result", weeks)
         }
     }
 
