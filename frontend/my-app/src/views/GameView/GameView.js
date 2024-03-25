@@ -11,18 +11,17 @@ import heart from "../../assets/heart.png"
 import endoscopy from "../../assets/endoscopy.png"
 import ctscan from "../../assets/ctscan.png"
 import trials from "../../assets/trials.png"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Weeks from "../../components/Weeks";
 
-function GameView({ changeView }) {
+function GameView({ changeView, setTime }) {
 
     function update(dialogue, newOptions, weeksTaken) {
         setMsg(dialogue)
         setChoices(newOptions.map(option => story[option]))
         setWeeks(weeks => weeksTaken + weeks)
+        setTime(weeks => weeksTaken + weeks)
     }
-
-    const getCurrentWeeks = () => weeks;
 
     const story = {
         "BloodTest": {
@@ -154,7 +153,7 @@ function GameView({ changeView }) {
         "Success": {
             "title": "Congratulations, you have been diagnosed.",
             "src": heart,
-            onClick: () => changeView("result40")
+            onClick: () => changeView("result")
         }
     }
 
@@ -162,7 +161,6 @@ function GameView({ changeView }) {
     const [choices, setChoices] = useState([story["BloodTest"], story["Antibiotics"], story["Neurologist"]]);
     const [weeks, setWeeks] = useState(0);
     const [message, setMsg] = useState("I need to choose between these options.")
-
 
     return (
         <div>

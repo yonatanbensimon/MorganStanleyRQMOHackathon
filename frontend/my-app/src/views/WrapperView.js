@@ -9,16 +9,14 @@ import InstructionsView from "./InstructionsView/InstructionsView";
 
 function WrapperView() {
   const [currentView, setCurrentView] = useState("home");
+  const [time, setTime] = useState(0)
 
   const renderView = () => {
     switch (true) {
       case currentView === "game":
-        return <GameView changeView={setCurrentView} />;
+        return <GameView changeView={setCurrentView} setTime={setTime} />;
       case currentView === "result":
-        return <ResultView changeView={setCurrentView} />;
-      case currentView.startsWith("result"):
-        const resultNumber = parseInt(currentView.replace("result", ""));
-        return <ResultView changeView={setCurrentView} resultNumber={resultNumber} />;
+        return <ResultView changeView={setCurrentView} weeks={time} />;
       case currentView === "instructions":
         return <InstructionsView changeView={setCurrentView} />;
       default:
