@@ -22,6 +22,8 @@ function GameView({ changeView }) {
         setWeeks(weeks => weeksTaken + weeks)
     }
 
+    const getCurrentWeeks = () => weeks;
+
     const story = {
         "BloodTest": {
             "title": "Blood test",
@@ -152,7 +154,7 @@ function GameView({ changeView }) {
         "Success": {
             "title": "Congratulations, you have been diagnosed.",
             "src": heart,
-            onClick: () => changeView("result", weeks)
+            onClick: () => changeView("result40")
         }
     }
 

@@ -3,7 +3,7 @@ import './ResultView.css'; // Import your CSS file for styling
 import BestButton from '../../components/BestButton';
 import Confetti from 'react-confetti';
 
-const ResultView = ({ score = 100, success = true, weeks = 40 }) => {
+const ResultView = ({ success = true, weeks = 40 }) => {
   return (
     <div className="result-container">
       <div className="content">
