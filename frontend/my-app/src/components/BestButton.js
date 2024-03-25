@@ -1,6 +1,5 @@
 import React from 'react';
-import './BestButton.css'; // Import your CSS file for styling
-
+import './BestButton.css';
 const BestButton = ({ children, onClick }) => {
   return (
     <button className="BestButton" onClick={onClick}>
