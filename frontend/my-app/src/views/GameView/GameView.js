@@ -18,7 +18,7 @@ function GameView({ changeView }) {
     function update(dialogue, newOptions, weeksTaken) {
         setMsg(dialogue)
         setChoices(newOptions.map(option => story[option]))
-        setWeeks(weeksTaken + 1)
+        setWeeks(weeksTaken + weeks)
     }
 
     const story = {
