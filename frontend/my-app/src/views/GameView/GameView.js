@@ -19,6 +19,7 @@ function GameView({ changeView }) {
         setMsg(dialogue)
         setChoices(newOptions.map(option => story[option]))
         setWeeks(weeksTaken + weeks)
+        setWeeks(weeks => weeksTaken + weeks)
     }
 
     const story = {
@@ -158,10 +159,12 @@ function GameView({ changeView }) {
     // Available options
     const [choices, setChoices] = useState([story["BloodTest"], story["Antibiotics"], story["Neurologist"]]);
     const [weeks, setWeeks] = useState(0);
-    const [message, setMsg] = useState("this is a test")
+    const [message, setMsg] = useState("I need to choose between these options.")
+
 
     return (
         <div>
+            <Weeks months = {weeks}></Weeks>
             <ButtonContainer>
                 {choices.map((choice, index) => (
                     <ButtonChoice key={index} src={choice.src} onClick={choice.onClick}>

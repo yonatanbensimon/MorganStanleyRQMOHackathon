@@ -1,0 +1,18 @@
+.weeks {
+    position: absolute;
+    top: 5px; /* Adjust this value to control distance from the bottom */
+    right: 0;
+
+    color: #000; /* Black text color */
+    width: 100px;
+    height: 50px;
+    overflow: hidden; /* Ensures the content doesn't spill out */
+  }
+  
+  .weeks p {
+    white-space: pre-wrap; /* Preserves white space and line breaks */
+    margin: 0; /* Removes default paragraph margin */
+    font-size: small;
+    width: 100px;
+  }
+  

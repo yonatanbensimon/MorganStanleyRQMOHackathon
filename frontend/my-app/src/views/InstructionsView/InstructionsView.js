@@ -10,9 +10,9 @@ import next from '../../assets/next.png';
 const InstructionsView = ({ changeView }) => {
   const [pageIndex, setPageIndex] = useState(0);
   const textPages = [
-    "page 1",
-    "page 2",
-    "page 3",
+    "I'm sorry to inform you that you have a disease that I've never seen before.",
+    "I think you have a rare disease, a disease that affects few people, and its causes are unknown.",
+    "Seek different medical experts and tests, you will end up finding diagnosis.",
     // Static, not dynamic (should be fine its instructions it should stay the same)
   ];
 

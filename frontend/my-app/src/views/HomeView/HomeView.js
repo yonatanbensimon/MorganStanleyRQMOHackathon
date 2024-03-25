@@ -21,7 +21,7 @@ const HomeView = ({ changeView }) => {
         className={thump ? 'heart thumping' : 'heart'}
         style={{ width: '250px', paddingTop: '0px', paddingBottom: '30px' }}
         />
-        <h2 style={{ fontSize: '30px', marginBottom: '10px', marginTop: '-10px' }}>Diagnosis Game</h2>
+        <h2 style={{ fontSize: '30px', marginBottom: '10px', marginTop: '-10px' }}>Journey to Diagnosis</h2>
         <BestButton onClick={() => changeView("instructions")}>Start Game</BestButton>
     </div>
   );

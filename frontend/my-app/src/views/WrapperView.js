@@ -15,7 +15,7 @@ function WrapperView() {
       case "game":
         return <GameView changeView={setCurrentView} />;
       case "result":
-        return <ResultView changeView={setCurrentView} />;
+        return <ResultView changeView={setCurrentView}/>;
       case "instructions":
         return <InstructionsView changeView={setCurrentView} />;
       default:
