@@ -3,7 +3,7 @@ import './ResultView.css'; // Import your CSS file for styling
 import BestButton from '../../components/BestButton';
 import Confetti from 'react-confetti';
 
-const ResultView = ({ success = true, weeks = 40 }) => {
+const ResultView = ({ changeView, success = true, weeks = 40 }) => {
   return (
     <div className="result-container">
       <div className="content">
@@ -17,7 +17,7 @@ const ResultView = ({ success = true, weeks = 40 }) => {
         <div className="diagnosistime">Your diagnosis took {weeks} weeks</div>
       
         <div className="button-container">
-          <BestButton>Restart Game</BestButton>
+          <BestButton onClick={() => changeView("game")}>Restart Game</BestButton>
           <BestButton>Learn More</BestButton>
         </div>
       </div>
