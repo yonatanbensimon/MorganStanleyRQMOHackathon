@@ -7,108 +7,121 @@ import blood from "../../assets/blood.png"
 import antibiotics from "../../assets/antibiotics.png"
 import { useState } from "react"
 
-
 function GameView({ changeView }) {
+
+    function update(dialogue, newOptions, weeksTaken) {
+        setMsg(dialogue)
+        setChoices(newOptions.map(option => story[option]))
+        setWeeks(weeksTaken + 1)
+    }
 
     const story = {
         "BloodTest": {
             "title": "Blood test",
             "src": blood,
-            onClick: () => changeView("home"),
-            "dialogue": "There is nothing conclusive but indicates that scans might lead to something.",
-            "newOptions": ["MRIScan", "CTScan"],
-            "weeksTaken": 2
-          },
+            onClick: () => update(
+                "There is nothing conclusive but indicates that scans might lead to something.", 
+                ["MRIScan", "CTScan"], 
+                2
+            )
+        },
         "MRIScan": {
             "title": "MRI scan",
             "src": mri,
-            onClick: () => changeView("home"),
-            "dialogue": "It didn’t show anything abnormal.",
-            "newOptions": null,
-            "weeksTaken": 1,
-            "deadEnd": true
+            onClick: () => update(
+                "It didn’t show anything abnormal.", 
+                [], 
+                1
+            ),
         },
         "CTScan": {
             "title": "CT scan",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "No conclusions could be drawn.",
-            "newOptions": null,
-            "weeksTaken": 1,
-            "deadEnd": true
+            onClick: () => update(
+                "No conclusions could be drawn.", 
+                [], 
+                1
+            ),
         },
         "Antibiotics": {
             "title": "Antibiotics",
             "src": antibiotics,
-            onClick: () => changeView("home"),
-            "dialogue": "I tried them for a few months, but there were no improvements in my condition.",
-            "newOptions": null,
-            "weeksTaken": 12,
-            "deadEnd": true
+            onClick: () => update(
+                "I tried them for a few months, but there were no improvements in my condition.", 
+                [], 
+                12
+            ),
         },
         "Neurologist": {
             "title": "Neurologist",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "\"Sorry, I couldn’t pinpoint the issue. You should give a rheumatologist or a genetic testing a try.\"",
-            "newOptions": ["GeneticTesting", "Rheumatologist"],
-            "weeksTaken": 3
+            onClick: () => update(
+                "\"Sorry, I couldn’t pinpoint the issue. You should give a rheumatologist or a genetic testing a try.\"", 
+                ["GeneticTesting", "Rheumatologist"],
+                3
+            ),
         },
         "GeneticTesting": {
             "title": "Genetic testing",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "The test showed that my genetics are susceptible to cancer, I might learn more with an oncologist.",
-            "newOptions": ["Oncologist"],
-            "weeksTaken": 2
+            onClick: () => update(
+                "The test showed that my genetics are susceptible to cancer, I might learn more with an oncologist.",
+                ["Oncologist"],
+                2
+            ),
         },
         "Oncologist": {
             "title": "Oncologist",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "“I don’t know what you have. There is no sign of cancer. I’m sorry I can’t help you more.”",
-            "newOptions": null,
-            "weeksTaken": 4,
-            "deadEnd": true
+            onClick: () => update(
+                "“I don’t know what you have. There is no sign of cancer. I’m sorry I can’t help you more.”",
+                [],
+                4
+            ),
         },
         "Rheumatologist": {
             "title": "Rheumatologist",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "“This is out of my specialty. I can refer you to a trial treatment. Also, I suggest an endoscopy.”",
-            "newOptions": ["TrialTreatment", "Endoscopy"],
-            "weeksTaken": 3
+            onClick: () => update(
+                "“This is out of my specialty. I can refer you to a trial treatment. Also, I suggest an endoscopy.”",
+                ["TrialTreatment", "Endoscopy"],
+                3
+            ),
         },
         "TrialTreatment": {
             "title": "Trial treatment",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "I tried the treatment for a year, but it didn't help my condition whatsoever.",
-            "newOptions": null,
-            "weeksTaken": 52,
-            "deadEnd": true
+            onClick: () => update(
+                "I tried the treatment for a year, but it didn't help my condition whatsoever.",
+                [],
+                52
+            ),
         },
         "Endoscopy": {
             "title": "Endoscopy",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "It shows that my lungs might have an issue, so I could check a pulmonologist.",
-            "newOptions": ["Pulmonologist"],
-            "weeksTaken": 2
+            onClick: () => update(
+                "It shows that my lungs might have an issue, so I could check a pulmonologist.",
+                ["Pulmonologist"],
+                2
+            )
         },
         "Pulmonologist": {
             "title": "Pulmonologist",
             "src": doctor,
-            onClick: () => changeView("home"),
-            "dialogue": "“Your lungs aren’t functioning properly. I believe you have a condition where each lung acts independently from the other during sleep. This would explain the symptoms that you have. We found the crux of the issue.”",
-            "newOptions": null,
-            "weeksTaken": 6,
+            onClick: () => update(
+                "“Your lungs aren’t functioning properly. I believe you have a condition where each lung acts independently from the other during sleep. This would explain the symptoms that you have. We found the crux of the issue.”",
+                [],
+                6
+            ),
             "gameComplete": true
         }
     }
 
     // Available options
     const [choices, setChoices] = useState([story["BloodTest"], story["Antibiotics"], story["Neurologist"]]);
+    const [weeks, setWeeks] = useState(0);
+    const [message, setMsg] = useState("this is a test")
 
     return (
         <div>
@@ -119,7 +132,7 @@ function GameView({ changeView }) {
                     </ButtonChoice>
                 ))}
             </ButtonContainer>
-           <TextBox message={"This is a test"}/>
+           <TextBox message={message}/>
         </div>
     );
 }
