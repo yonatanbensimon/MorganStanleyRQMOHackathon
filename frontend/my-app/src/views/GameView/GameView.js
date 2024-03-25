@@ -12,13 +12,13 @@ import endoscopy from "../../assets/endoscopy.png"
 import ctscan from "../../assets/ctscan.png"
 import trials from "../../assets/trials.png"
 import { useState } from "react"
+import Weeks from "../../components/Weeks";
 
 function GameView({ changeView }) {
 
     function update(dialogue, newOptions, weeksTaken) {
         setMsg(dialogue)
         setChoices(newOptions.map(option => story[option]))
-        setWeeks(weeksTaken + weeks)
         setWeeks(weeks => weeksTaken + weeks)
     }
 
